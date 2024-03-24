@@ -1,5 +1,6 @@
 import pygame
 import random
+import time
 
 pygame.init()
 
@@ -26,6 +27,7 @@ account = pygame.font.SysFont('arial', 36)
 running = True
 while running:
     screen.fill(color)
+    time.sleep(1.0)
     account_text = account.render('Попаданий: ' + str(points), 1, (0, 0, 0))
     screen.blit(account_text, (20, 20))
     for event in pygame.event.get():
@@ -35,8 +37,8 @@ while running:
             mouse_x, mouse_y = pygame.mouse.get_pos()
             if target_x < mouse_x < target_x + target_width and target_y < mouse_y < target_y + target_height:
                 points = points + 1
-                target_x = random.randint(0, SCREEN_WIDTH - target_width)
-                target_y = random.randint(0, SCREEN_HEIGHT - target_height)
+    target_x = random.randint(0, SCREEN_WIDTH - target_width)
+    target_y = random.randint(0, SCREEN_HEIGHT - target_height)
     screen.blit(target_img, (target_x, target_y))
     pygame.display.update()
 
