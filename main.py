@@ -22,9 +22,6 @@ screen.fill(color)
 
 points = 0
 account = pygame.font.SysFont('arial', 36)
-#account_text = account.render(str(points), 1, (0, 0, 0))
-#screen.blit(account_text , (50, 50))
-#pygame.display.update()
 
 running = True
 while running:
